@@ -1,0 +1,172 @@
+:root {
+  color-scheme: dark;
+  --ink: #fffaf0;
+  --teal: #0d777a;
+  --deep-teal: #052d34;
+  --violet: #551287;
+  --magenta: #b73591;
+  --orange: #f06011;
+  --shadow: rgba(0, 0, 0, 0.45);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+}
+
+body {
+  font-family:
+    Impact,
+    Haettenschweiler,
+    "Arial Narrow Bold",
+    "Franklin Gothic Heavy",
+    system-ui,
+    sans-serif;
+  color: var(--ink);
+  background:
+    linear-gradient(180deg, rgba(5, 45, 52, 0.88), rgba(16, 63, 68, 0.74) 45%, rgba(240, 96, 17, 0.94)),
+    url("art/jnxfest-handout.jpg") center / cover fixed;
+  letter-spacing: 0;
+}
+
+body::before {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  content: "";
+  background:
+    radial-gradient(circle at 22% 18%, rgba(183, 53, 145, 0.38), transparent 24rem),
+    radial-gradient(circle at 80% 50%, rgba(85, 18, 135, 0.42), transparent 22rem),
+    linear-gradient(90deg, rgba(0, 0, 0, 0.55), transparent 42%, rgba(0, 0, 0, 0.52));
+  mix-blend-mode: multiply;
+}
+
+.landing {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: clamp(1rem, 3vw, 3rem);
+}
+
+.hero {
+  width: min(1120px, 100%);
+  display: grid;
+  grid-template-columns: minmax(260px, 430px) minmax(0, 1fr);
+  align-items: center;
+  gap: clamp(1.5rem, 4vw, 4.5rem);
+}
+
+.poster-wrap {
+  position: relative;
+}
+
+.poster-wrap::before {
+  position: absolute;
+  inset: 1rem -0.75rem -0.75rem 0.75rem;
+  z-index: -1;
+  content: "";
+  background: linear-gradient(135deg, var(--magenta), var(--violet), var(--orange));
+  transform: rotate(-2deg);
+}
+
+.poster {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1170 / 1532;
+  object-fit: cover;
+  border: 4px solid var(--ink);
+  box-shadow: 0 2rem 4rem var(--shadow);
+  transform: rotate(1deg);
+}
+
+.message {
+  text-transform: uppercase;
+  text-shadow:
+    0.09em 0.09em 0 #000,
+    -0.035em -0.035em 0 #000,
+    0 0.12em 0.45em rgba(0, 0, 0, 0.65);
+}
+
+.eyebrow {
+  margin: 0 0 0.6rem;
+  color: var(--orange);
+  font-size: clamp(1rem, 1.7vw, 1.45rem);
+  line-height: 1;
+}
+
+h1 {
+  margin: 0;
+  max-width: 8ch;
+  color: var(--ink);
+  font-size: clamp(5rem, 15vw, 10.5rem);
+  line-height: 0.78;
+}
+
+.announcement {
+  margin: clamp(1.3rem, 3vw, 2rem) 0 0;
+  max-width: 12ch;
+  color: var(--ink);
+  font-size: clamp(2.1rem, 6vw, 5.35rem);
+  line-height: 0.9;
+}
+
+.supporting {
+  margin: 1.25rem 0 0;
+  max-width: 32rem;
+  font-family:
+    "Arial Narrow",
+    "Franklin Gothic Medium",
+    Arial,
+    sans-serif;
+  font-size: clamp(1rem, 1.6vw, 1.25rem);
+  font-weight: 800;
+  line-height: 1.32;
+  text-transform: none;
+  text-shadow: 0 0.1em 0.4em rgba(0, 0, 0, 0.8);
+}
+
+@media (max-width: 780px) {
+  body {
+    background-attachment: scroll;
+  }
+
+  .landing {
+    display: block;
+    padding: 1rem;
+  }
+
+  .hero {
+    min-height: calc(100vh - 2rem);
+    grid-template-columns: 1fr;
+    align-content: center;
+    gap: 1.4rem;
+  }
+
+  .poster-wrap {
+    width: min(72vw, 330px);
+    margin: 0 auto;
+  }
+
+  .message {
+    text-align: center;
+  }
+
+  h1,
+  .announcement,
+  .supporting {
+    max-width: none;
+  }
+
+  h1 {
+    font-size: clamp(4.3rem, 22vw, 8rem);
+  }
+
+  .announcement {
+    font-size: clamp(2rem, 10vw, 3.5rem);
+  }
+}
