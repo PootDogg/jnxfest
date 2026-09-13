@@ -152,22 +152,13 @@ body::before {
 .eyebrow {
   margin: 0 0 0.6rem;
   color: var(--orange);
-  font-size: clamp(1rem, 1.7vw, 1.45rem);
+  font-size: clamp(1.35rem, 2.4vw, 2rem);
   line-height: 1;
   text-transform: uppercase;
 }
 
-h1 {
-  margin: 0;
-  max-width: 8ch;
-  color: var(--ink);
-  font-size: clamp(4.6rem, 11.5vw, 8.4rem);
-  line-height: 0.78;
-  text-transform: uppercase;
-}
-
 .announcement {
-  margin: clamp(1.3rem, 3vw, 2rem) 0 0;
+  margin: clamp(0.8rem, 2vw, 1.4rem) 0 0;
   max-width: 12ch;
   color: var(--ink);
   font-size: clamp(2.1rem, 4.8vw, 4.15rem);
@@ -215,7 +206,6 @@ h1 {
     text-align: center;
   }
 
-  h1,
   .announcement,
   .thanks,
   .band-links,
@@ -237,8 +227,8 @@ h1 {
     padding: 0.32rem 0.5rem;
   }
 
-  h1 {
-    font-size: clamp(4.3rem, 22vw, 8rem);
+  .eyebrow {
+    font-size: clamp(1.25rem, 7vw, 2.2rem);
   }
 
   .announcement {
