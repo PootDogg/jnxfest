@@ -46,8 +46,59 @@ body::before {
   mix-blend-mode: multiply;
 }
 
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  padding: 0.6rem clamp(1rem, 3vw, 3rem);
+  background: rgba(5, 45, 52, 0.9);
+  border-bottom: 3px solid rgba(255, 250, 240, 0.72);
+  box-shadow: 0 0.7rem 1.5rem rgba(0, 0, 0, 0.28);
+  backdrop-filter: blur(8px);
+}
+
+.site-nav {
+  width: min(1120px, 100%);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.35rem clamp(0.45rem, 1.4vw, 1rem);
+  font-family:
+    "Arial Narrow",
+    "Franklin Gothic Medium",
+    Arial,
+    sans-serif;
+  font-size: clamp(0.92rem, 1.25vw, 1.08rem);
+  font-weight: 900;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.site-nav a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.15rem;
+  padding: 0.5rem 0.7rem;
+  color: var(--ink);
+  text-decoration: none;
+  text-shadow: 0 0.1em 0.35em rgba(0, 0, 0, 0.85);
+  border: 2px solid transparent;
+}
+
+.site-nav a:hover,
+.site-nav a:focus-visible,
+.site-nav a[aria-current="page"] {
+  color: #130c18;
+  background: var(--orange);
+  border-color: var(--ink);
+  box-shadow: 0.12rem 0.12rem 0 #000;
+  outline: none;
+}
+
 .landing {
-  min-height: 100vh;
+  min-height: calc(100vh - 3.35rem);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -187,9 +238,74 @@ body::before {
   text-shadow: 0 0.1em 0.4em rgba(0, 0, 0, 0.8);
 }
 
+.anchor-target {
+  display: block;
+  scroll-margin-top: 5rem;
+}
+
+.under-construction-page {
+  background: #000;
+}
+
+.under-construction-page::before {
+  display: none;
+}
+
+.construction {
+  min-height: calc(100vh - 3.35rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: clamp(1.5rem, 5vw, 4rem);
+  text-align: center;
+  background: #000;
+}
+
+.construction h1 {
+  margin: 0;
+  color: var(--orange);
+  font-size: clamp(3rem, 11vw, 7rem);
+  line-height: 0.9;
+  text-transform: uppercase;
+  text-shadow:
+    0.08em 0.08em 0 #250718,
+    0 0.16em 0.5em rgba(240, 96, 17, 0.35);
+}
+
+.construction p {
+  margin: 1.25rem 0 0;
+  max-width: 34rem;
+  font-family:
+    "Arial Narrow",
+    "Franklin Gothic Medium",
+    Arial,
+    sans-serif;
+  color: var(--ink);
+  font-size: clamp(1.05rem, 2.2vw, 1.45rem);
+  font-weight: 900;
+  line-height: 1.25;
+  text-shadow: 0 0.1em 0.35em rgba(0, 0, 0, 0.9);
+}
+
 @media (max-width: 780px) {
   body {
     background-attachment: scroll;
+  }
+
+  .site-header {
+    position: static;
+    padding: 0.55rem 0.75rem;
+  }
+
+  .site-nav {
+    gap: 0.28rem;
+    font-size: 0.82rem;
+  }
+
+  .site-nav a {
+    min-height: 1.85rem;
+    padding: 0.4rem 0.44rem;
   }
 
   .landing {

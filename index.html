@@ -20,11 +20,22 @@
     <link rel="stylesheet" href="styles.css">
   </head>
   <body>
-    <main class="landing">
+    <header class="site-header">
+      <nav class="site-nav" aria-label="Primary navigation">
+        <a href="index.html" aria-current="page">Home</a>
+        <a href="bands.html">Bands</a>
+        <a href="schedule.html">Schedule</a>
+        <a href="news.html">News</a>
+        <a href="venue.html">Venue</a>
+        <a href="sponsors.html">Sponsors</a>
+      </nav>
+    </header>
+
+    <main class="landing" id="home">
       <p class="thanks">
         Thank you to all who attended and those behind the scenes to make JNX FEST 2026 happen and a success!
       </p>
-      <nav class="band-links" aria-label="JNX Fest 2026 band links">
+      <nav class="band-links" id="bands" aria-label="JNX Fest 2026 band links">
         <span>Check out the bands here:</span>
         <div class="band-row">
           <a href="https://jnxofficial.com/" target="_blank" rel="noopener noreferrer">JNX</a>
@@ -50,11 +61,13 @@
         </div>
 
         <div class="message">
-          <p class="eyebrow">Mariposa, California</p>
+          <p class="eyebrow" id="venue">Mariposa, California</p>
           <p class="announcement">Stay tuned for JNX FEST 2027 details!</p>
-          <p class="supporting">
+          <p class="supporting" id="news">
             A temporary home for future announcements, lineup news, and festival updates.
           </p>
+          <span id="schedule" class="anchor-target" aria-hidden="true"></span>
+          <span id="sponsors" class="anchor-target" aria-hidden="true"></span>
         </div>
       </section>
     </main>
